@@ -26,7 +26,7 @@ function Dashboard() {
 
     useEffect(()=>{
 
-            axios.get(`https://stagingzix.xyz/auth/fetchyall/${id}`).then((response)=>{
+            axios.get(`https://games.stagingzix.xyz/auth/fetchyall/${id}`).then((response)=>{
                 if(response.data.message){
                       console.log(response.data.message);
                       navigate('/');
@@ -36,14 +36,14 @@ function Dashboard() {
                     setUserInfo(response.data);
 
                     // check if they have mail
-                    axios.get(`https://stagingzix.xyz/mail/newmail/${id}`).then((respi)=>{
+                    axios.get(`https://games.stagingzix.xyz/mail/newmail/${id}`).then((respi)=>{
 
                         if(respi.data.gotmail===true){
                             setGotMail(true);
                          }
                     }).catch((error) => {});
 
-                    axios.get(`https://stagingzix.xyz/items/fetchByUser/${id}`).then((res)=>{
+                    axios.get(`https://games.stagingzix.xyz/items/fetchByUser/${id}`).then((res)=>{
                         
                         const available = res.data.filter((value)=>{
                             return (value.state==='EXPECTED' || value.state==='AVAILABLE' );
@@ -59,7 +59,7 @@ function Dashboard() {
                             navigate('/');
                     });
 
-                    axios.get(`https://stagingzix.xyz/items/mywatchlist/${id}`).then((resbidy)=>{
+                    axios.get(`https://games.stagingzix.xyz/items/mywatchlist/${id}`).then((resbidy)=>{
                         setMyWatchlist(resbidy.data);
                     }).catch((error) => {
                         navigate('/');

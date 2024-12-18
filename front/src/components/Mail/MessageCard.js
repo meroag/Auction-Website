@@ -105,7 +105,7 @@ export default function MessageCard(props) {
               accessToken: localStorage.getItem("accessToken")
           }
       }
-      axios.post(`https://stagingzix.xyz/mail/message/${props.message.recipientId}`, body, head).then((res)=>{
+      axios.post(`https://games.stagingzix.xyz/mail/message/${props.message.recipientId}`, body, head).then((res)=>{
           if (res.data.error){
               alert(res.data.error);
           }

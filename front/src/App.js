@@ -31,7 +31,7 @@ function App() {
 
   useEffect(()=>{
 
-      axios.get("https://stagingzix.xyz//auth/validate", { headers: {
+      axios.get("https://games.stagingzix.xyz//auth/validate", { headers: {
         accessToken: localStorage.getItem("accessToken"),
       }}).then((res)=>{
         if(res.data.error){

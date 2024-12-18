@@ -25,21 +25,21 @@ const kind = [
     title: 'Sell',
     description:
       "Selling with us is rather easy. You have absolute control over the price, duration of the auction and availability for immediate purchase. All you have to do is create an account and when you are confirmed you are ready to post your first listing!",
-    imageUrl: "https://stagingzix.xyz/images/kobuR.jpg",
+    imageUrl: "https://games.stagingzix.xyz/images/kobuR.jpg",
     time: 1500,
   },
   {
     title: 'Buy',
     description:
       'In our auctions, items are bid on and sold to the highest bidder on a public sale. We ensure a safe transaction between seller and buyer and you can communicate securely within our mail app. Feel free to explore our catalogue before joining here!',
-    imageUrl: "https://stagingzix.xyz/images/saadR.jpg",
+    imageUrl: "https://games.stagingzix.xyz/images/saadR.jpg",
     time: 1500,
   },
 ];
 
   return (
     <div  style={{     minHeight: '100vh', width: '100%',
-      backgroundImage: `url("https://stagingzix.xyz/images/products.jpg")`,
+      backgroundImage: `url("https://games.stagingzix.xyz/images/products.jpg")`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover', }}>
       

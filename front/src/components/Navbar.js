@@ -14,7 +14,7 @@ function Navbar(props) {
 
   useEffect(()=>{
 
-    axios.get(`https://stagingzix.xyz/mail/newmailcount/${authState.id}`).then((respi)=>{
+    axios.get(`https://games.stagingzix.xyz/mail/newmailcount/${authState.id}`).then((respi)=>{
 
       if(respi.data.count===0){
             setGotMail(0);

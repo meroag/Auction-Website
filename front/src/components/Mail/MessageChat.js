@@ -131,7 +131,7 @@ export default function MessageChat(props) {
           }
       }
 
-      axios.post(`https://stagingzix.xyz/mail/message/${sender}`, body, head).then((res)=>{
+      axios.post(`https://games.stagingzix.xyz/mail/message/${sender}`, body, head).then((res)=>{
 
           if (res.data.error){
               alert(res.data.error);

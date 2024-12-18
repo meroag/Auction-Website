@@ -16,7 +16,7 @@ export default function Categories(props) {
 
     useEffect(()=>{
 
-      axios.get("https://stagingzix.xyz/categories").then((res)=>{
+      axios.get("https://games.stagingzix.xyz/categories").then((res)=>{
           setCategories(res.data);
 
           // Ιnitialise the selection for categories

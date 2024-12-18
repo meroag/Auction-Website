@@ -37,7 +37,7 @@ export default function MailPurchases() {
       }
     }
 
-      axios.get(`https://stagingzix.xyz/mail/bidder/${authState.id}`, head).then((res)=>{
+      axios.get(`https://games.stagingzix.xyz/mail/bidder/${authState.id}`, head).then((res)=>{
         setMailList(res.data);
       });
 
@@ -59,7 +59,7 @@ export default function MailPurchases() {
       }
     }
     
-    axios.get(`https://stagingzix.xyz/mail/seller/chat/${authState.id}`, head).then((res)=>{
+    axios.get(`https://games.stagingzix.xyz/mail/seller/chat/${authState.id}`, head).then((res)=>{
         setChatDisplayed(res.data);
     });
 

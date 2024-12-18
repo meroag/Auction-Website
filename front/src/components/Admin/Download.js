@@ -6,7 +6,7 @@ export function Download(props){
     const download=(e)=>{
 
         Axios({
-            url: 'https://stagingzix.xyz/items/downloadJSON/',
+            url: 'https://games.stagingzix.xyz/items/downloadJSON/',
             method: 'GET',
             responseType: 'text', // important (have it as blob if you don't stringify)
             headers: {

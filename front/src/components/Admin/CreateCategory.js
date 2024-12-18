@@ -35,7 +35,7 @@ function CreateCategory() {
               }
           }
 
-          axios.post("https://stagingzix.xyz/categories", body, head).then((res)=>{
+          axios.post("https://games.stagingzix.xyz/categories", body, head).then((res)=>{
               if (res.data.error){
                   setErrorMessage(res.data.error)
                   handleClickAlertError();
@@ -78,7 +78,7 @@ function CreateCategory() {
   return (
 
     <div style={{ minHeight: '90vh', width: '100%', 
-                  backgroundImage: `url("https://stagingzix.xyz/images/background.png")`,
+                  backgroundImage: `url("https://games.stagingzix.xyz/images/background.png")`,
                   backgroundRepeat: 'repeat',
                 }}>
       <div className='createItemPage'>

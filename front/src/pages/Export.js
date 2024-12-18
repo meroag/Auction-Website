@@ -36,7 +36,7 @@ export default function Export() {
         }
       }
 
-      axios.get("https://stagingzix.xyz/items/admin/", head).then((res)=>{
+      axios.get("https://games.stagingzix.xyz/items/admin/", head).then((res)=>{
         setItemList(res.data);
       });
 
@@ -45,7 +45,7 @@ export default function Export() {
   return (
 
     <div style = {{ minHeight: '90vh', width: '100%', backgroundRepeat: 'repeat',
-                    backgroundImage: `url("https://stagingzix.xyz/images/background.png")`,
+                    backgroundImage: `url("https://games.stagingzix.xyz/images/background.png")`,
     }}>
     
       {/* Firstly the page headers */}

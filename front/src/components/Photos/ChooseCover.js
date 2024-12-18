@@ -43,7 +43,7 @@ function ChooseCover(props) {
         }
     }
 
-    axios.put(`https://stagingzix.xyz/photos/setcover/${props.images[selectedImage].id}`, body, head).then((resimag)=>{
+    axios.put(`https://games.stagingzix.xyz/photos/setcover/${props.images[selectedImage].id}`, body, head).then((resimag)=>{
     });
     setOpen(false);
   }

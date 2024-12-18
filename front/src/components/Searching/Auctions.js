@@ -38,14 +38,14 @@ function Auctions() {
         
         // if no category selected bring everything
         if (Object.keys(selectedCategory).length <=0 ){
-            axios.get(`https://stagingzix.xyz/items`).then((res)=>{
+            axios.get(`https://games.stagingzix.xyz/items`).then((res)=>{
                 setItemList(res.data);
                 setComplete(true);
             });
         }
         else{
 
-            axios.get(`https://stagingzix.xyz/items/categories/${selectedCategory.id}`).then((res)=>{
+            axios.get(`https://games.stagingzix.xyz/items/categories/${selectedCategory.id}`).then((res)=>{
                 setItemList(res.data);
                 setComplete(true);
             });

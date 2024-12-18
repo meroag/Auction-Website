@@ -56,7 +56,7 @@ function Registration() {
         username: Yup.string().min(3).max(20).required("You must input a username").test('Unique Username', 'Username already exists',
             function (value) {
                 return new Promise((resolve, reject) => {
-                    axios.get(`https://stagingzix.xyz/auth/exists/${value}`)
+                    axios.get(`https://games.stagingzix.xyz/auth/exists/${value}`)
                         .then((res) => {
                             console.log(res);
                             if(res.data.exists===true){
@@ -118,7 +118,7 @@ function Registration() {
             holdData.latitudeLongitude = point;
         }
 
-        axios.post("https://stagingzix.xyz/auth/", holdData).then((res)=>{
+        axios.post("https://games.stagingzix.xyz/auth/", holdData).then((res)=>{
         });
 
         setOpen(true);

@@ -76,7 +76,7 @@ function DisplayPhotos(props) {
           </Box>
           :
 
-          <img className='lando_image' alt='cover' src={"https://stagingzix.xyz/images/placeholder.png"} />
+          <img className='lando_image' alt='cover' src={"https://games.stagingzix.xyz/images/placeholder.png"} />
 
         }
     </>

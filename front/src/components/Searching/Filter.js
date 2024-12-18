@@ -25,7 +25,7 @@ export default function Filter() {
   let navigate = useNavigate();
 
   useEffect(()=>{
-      axios.get("https://localhost:33123/items").then((res)=>{
+      axios.get("https://stagingzix.xyz/items").then((res)=>{
       setItemList(res.data);
       });
   }, []);
@@ -42,7 +42,7 @@ export default function Filter() {
 
   return (
     <div style={{     minHeight: '90vh', width: '100%',
-            backgroundImage: `url("https://localhost:33123/images/background.png")`,
+            backgroundImage: `url("https://stagingzix.xyz/images/background.png")`,
             backgroundRepeat: 'repeat',
             }}>
       <div className="container" >

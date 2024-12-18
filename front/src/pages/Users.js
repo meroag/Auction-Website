@@ -62,11 +62,11 @@ function Users() {
       }
     }
 
-    axios.get("https://localhost:33123/auth", head).then((res)=>{
+    axios.get("https://stagingzix.xyz/auth", head).then((res)=>{
         setUserList(res.data);
     });
 
-    axios.get("https://localhost:33123/auth/approve", head).then((res)=>{
+    axios.get("https://stagingzix.xyz/auth/approve", head).then((res)=>{
       setNotApprovedList(res.data);
     });
   
@@ -82,7 +82,7 @@ function Users() {
       }
       
       // Send the approve in the backend
-      axios.put("https://localhost:33123/auth/approve", approvedList, head).then((res)=>{
+      axios.put("https://stagingzix.xyz/auth/approve", approvedList, head).then((res)=>{
 
         if (res.data.error){
           setErrorMessage(res.data.error)

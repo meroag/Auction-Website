@@ -69,7 +69,7 @@ function LoginForm() {
 
     const onSubmit = (data) =>{
 
-        axios.post("https://localhost:33123/auth/login", data).then((res)=>{
+        axios.post("https://stagingzix.xyz/auth/login", data).then((res)=>{
             if (res.data.error){
                 if (res.data.error==='approval'){
                     setOpen(true);

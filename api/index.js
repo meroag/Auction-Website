@@ -13,11 +13,11 @@ const session = require("express-session");
 
 // then express and cors
 app.use(express.json());
-app.use(cors({
-    origin: ["https://localhost:3000"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
-}));
+// app.use(cors({
+//     origin: ["https://localhost:3000"],
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: true
+// }));
 
 // this for the cookies
 app.use(cookieParser());
@@ -52,10 +52,7 @@ app.use("/photos", photographyRouter);
 app.use('/images/', express.static('images'));
 
 // Create the ssl server
-const sslServer = https.createServer({
-    key: fs.readFileSync('/Users/yourname/key.pem'),
-    cert: fs.readFileSync('/Users/yourname/cert.pem')
-}, app);
+const sslServer = http.createServer(app);
 
 // listen on port 33123 creating the tables in models in the process
 db.sequelize.sync({ force: false, alter:true}).then(()=>{
@@ -82,7 +79,7 @@ db.sequelize.sync({ force: false, alter:true}).then(()=>{
         console.log("Already set up");
     });
 
-    sslServer.listen(33123, ()=>{
+    sslServer.listen(443, ()=>{
         console.log("Listening on port: 33123");
     });
 });

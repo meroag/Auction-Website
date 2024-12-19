@@ -43,7 +43,7 @@ function ChooseCover(props) {
         }
     }
 
-    axios.put(`https://localhost:33123/photos/setcover/${props.images[selectedImage].id}`, body, head).then((resimag)=>{
+    axios.put(`https://auctions-api.stagingzix.xyz/photos/setcover/${props.images[selectedImage].id}`, body, head).then((resimag)=>{
     });
     setOpen(false);
   }

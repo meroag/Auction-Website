@@ -66,7 +66,7 @@ export default function ConfirmPayment(props) {
         }
     }
 
-    axios.post(`https://localhost:33123/mail/confirmpayment/${props.mail.id}`, body, head).then((res)=>{
+    axios.post(`https://auctions-api.stagingzix.xyz/mail/confirmpayment/${props.mail.id}`, body, head).then((res)=>{
     });
 
     setValueC(2.5); 

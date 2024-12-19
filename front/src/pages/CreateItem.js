@@ -83,7 +83,7 @@ function CreateItem() {
     useEffect(() => {
 
         // Then get the categories recursively and return them from parent to children
-        axios.get(`https://games.stagingzix.xyz/categories/${selectedCategory.id}`).then((rescateg)=>{
+        axios.get(`https://localhost:33123/categories/${selectedCategory.id}`).then((rescateg)=>{
             setCategories(rescateg.data);
         });
 
@@ -119,7 +119,7 @@ function CreateItem() {
                 accessToken: localStorage.getItem("accessToken")
             }
         }
-        axios.post("https://games.stagingzix.xyz/items", holdData, head).then((res)=>{
+        axios.post("https://localhost:33123/items", holdData, head).then((res)=>{
 
             if (res.data.error){
                 alert("You are not signed in!");
@@ -132,7 +132,7 @@ function CreateItem() {
 
     return (
         <div style={{minHeight: '100vh', width: '100%',
-                     backgroundImage: `url("https://games.stagingzix.xyz/images/background.png")`,
+                     backgroundImage: `url("https://localhost:33123/images/background.png")`,
                      backgroundRepeat: 'repeat',
                     }}>
 

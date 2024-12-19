@@ -7,7 +7,7 @@ export function DownloadXML(props){
 
 
         Axios({
-            url: 'https://games.stagingzix.xyz/items/downloadXML/',
+            url: 'https://localhost:33123/items/downloadXML/',
             method: 'GET',
             responseType: 'text', // important text here not blob to keep the formatting
             headers: {

@@ -65,7 +65,7 @@ export default function ConfirmArrival(props) {
         }
     }
 
-    axios.post(`https://games.stagingzix.xyz/mail/confirmarrival/${props.mail.id}`, body, head).then((res)=>{
+    axios.post(`https://localhost:33123/mail/confirmarrival/${props.mail.id}`, body, head).then((res)=>{
     });
 
     setValueC(2.5);

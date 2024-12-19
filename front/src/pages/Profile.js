@@ -52,7 +52,7 @@ function Profile() {
     const {authState} = useContext(AuthContext);
 
     useEffect(()=>{
-            axios.get(`https://games.stagingzix.xyz/auth/fetchyall/${id}`).then((response)=>{
+            axios.get(`https://localhost:33123/auth/fetchyall/${id}`).then((response)=>{
                 if(response.data.message){
                     console.log(response.data.message);
                     navigate('/');
@@ -65,7 +65,7 @@ function Profile() {
                         setCoordinates(response.data.latitudeLongitude.coordinates);
                     }
 
-                    axios.get(`https://games.stagingzix.xyz/items/fetchByUser/${id}`).then((res)=>{
+                    axios.get(`https://localhost:33123/items/fetchByUser/${id}`).then((res)=>{
                         const available = res.data.filter((value)=>{
                             return (value.state==='AVAILABLE' );
                         });
@@ -98,7 +98,7 @@ function Profile() {
                         accessToken: localStorage.getItem("accessToken")
                     }
                 }
-                axios.put("https://games.stagingzix.xyz/auth/approve", approvedl, head).then((res)=>{
+                axios.put("https://localhost:33123/auth/approve", approvedl, head).then((res)=>{
                     if (res.data.error){
                         alert("There was an error!");
                     }

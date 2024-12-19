@@ -104,7 +104,7 @@ function PhotoUpload(props) {
             const namingScheme = itemId + "_" + Date.now()+"."+selectedFile.name.split('.').pop();
             
             // Request made to the backend api Send formData object
-            axios.post(`https://games.stagingzix.xyz/photos/${namingScheme}`, formData, head).then((res)=>{
+            axios.post(`https://localhost:33123/photos/${namingScheme}`, formData, head).then((res)=>{
                 if (res.data.error){
                     setErrorMessage(res.data.error);
                     handleClickAlertError();;

@@ -39,7 +39,7 @@ export default function MailInbox() {
         }
       }
 
-      axios.get(`https://games.stagingzix.xyz/mail/inbox/${authState.id}`, head).then((res)=>{
+      axios.get(`https://localhost:33123/mail/inbox/${authState.id}`, head).then((res)=>{
 
         // Also slice reverse to put the new mail on the top 
         setMailList(res.data.slice(0).reverse());
@@ -62,7 +62,7 @@ export default function MailInbox() {
 
     if (name.read===false){
 
-      axios.put(`https://games.stagingzix.xyz/mail/message/read/${name.id}`).then((res)=>{
+      axios.put(`https://localhost:33123/mail/message/read/${name.id}`).then((res)=>{
       });
 
       // Make a shallow copy of the items
@@ -103,7 +103,7 @@ export default function MailInbox() {
 
   const deleteMessage = (name) =>{
 
-    axios.put(`https://games.stagingzix.xyz/mail/message/deleteinbox/${name.id}`).then((res)=>{
+    axios.put(`https://localhost:33123/mail/message/deleteinbox/${name.id}`).then((res)=>{
     });
     let mails = [...mailList];
 

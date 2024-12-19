@@ -38,7 +38,7 @@ function DeletePhoto(props) {
 
     console.log(head);
 
-    axios.delete(`https://games.stagingzix.xyz/photos/${props.images[selectedImage].id}`, head).then((resimag)=>{
+    axios.delete(`https://localhost:33123/photos/${props.images[selectedImage].id}`, head).then((resimag)=>{
         console.log(resimag.data);
     });
 

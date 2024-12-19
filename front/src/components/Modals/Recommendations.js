@@ -15,7 +15,7 @@ function Recommendations() {
     useEffect(()=>{
 
         // This presupposes it is called from a place where the check that the auth state exists has been performed
-        axios.get(`https://games.stagingzix.xyz/items/top/${authState.id}`).then((res)=>{
+        axios.get(`https://localhost:33123/items/top/${authState.id}`).then((res)=>{
             setItemList(res.data);
 
         });

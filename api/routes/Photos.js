@@ -51,7 +51,7 @@ router.put('/setcover/:id', validateTheToken, async (req, res)=>{
 router.post('/:id', validateTheToken, upload.single('image'), async (req, res) => {
 
     const filename = req.params.id;
-    const myUrl = `https://games.stagingzix.xyz/images/${filename}`
+    const myUrl = `https://localhost:33123/images/${filename}`
 
     const itemId = parseInt(filename.split('_')[0]);
 
@@ -106,7 +106,7 @@ router.delete('/:id', validateTheToken, async (req, res)=>{
 
     if ( newcover === null){
         await Item.update({
-            coverPhoto: "https://games.stagingzix.xyz/images/placeholder.png",
+            coverPhoto: "https://localhost:33123/images/placeholder.png",
             },
             {where : {
                 id: itemId,

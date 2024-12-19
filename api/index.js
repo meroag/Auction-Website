@@ -14,7 +14,7 @@ const session = require("express-session");
 // then express and cors
 app.use(express.json());
 app.use(cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000","https://stagingzix.xyz","https://www.stagingzix.xyz"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));

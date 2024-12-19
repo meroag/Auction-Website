@@ -25,8 +25,8 @@ services:
       context: ./front
       dockerfile: Dockerfile
     container_name: auction-react
-    ports:
-      - "3000:3000"
+    expose:
+      - "3000"
     networks:
       - auction-net
     depends_on:
@@ -38,8 +38,8 @@ services:
       context: ./api
       dockerfile: Dockerfile
     container_name: auction-node
-    ports:
-      - "33123:33123"
+    expose:
+      - "33123"
     environment:
       - DB_HOST=auction-mariadb
       - DB_USER=root
@@ -51,8 +51,31 @@ services:
       - mariadb
     restart: on-failure
 
+
+  nginx-proxy-manager:
+    image: jc21/nginx-proxy-manager:latest
+    container_name: nginx-proxy-manager
+    restart: always
+    ports:
+      - "80:80"       # HTTP
+      - "443:443"     # HTTPS
+      - "81:81"       # Nginx Proxy Manager UI
+    environment:
+      DB_MYSQL_HOST: mariadb
+      DB_MYSQL_PORT: 3306
+      DB_MYSQL_USER: root
+      DB_MYSQL_PASSWORD: root
+      DB_MYSQL_NAME: auctionDB
+    networks:
+      - auction-net
+    volumes:
+      - nginx-proxy-manager-data:/data
+      - nginx-proxy-manager-letsencrypt:/etc/letsencrypt
+
 networks:
   auction-net:
 
 volumes:
   mariadb-data:
+  nginx-proxy-manager-data:
+  nginx-proxy-manager-letsencrypt:

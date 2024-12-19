@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: mariadb:10.5
+    container_name: auction-mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: auctionDB
+    networks:
+      - auction-net
+    expose:
+      - "3306"
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      
+  react-app:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    container_name: auction-react
+    ports:
+      - "3000:3000"
+    networks:
+      - auction-net
+    depends_on:
+      - node-app
+    restart: on-failure
+
+  node-app:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: auction-node
+    ports:
+      - "33123:33123"
+    environment:
+      - DB_HOST=auction-mariadb
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=auctionDB
+    networks:
+      - auction-net
+    depends_on:
+      - mariadb
+    restart: on-failure
+
+networks:
+  auction-net:
+
+volumes:
+  mariadb-data:
